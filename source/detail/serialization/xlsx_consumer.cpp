@@ -243,6 +243,9 @@ xlnt::detail::Cell parse_cell(xlnt::row_t row_arg, xml::parser *parser)
             throw xlnt::exception("unexcpected XML parsing event");
         }
         }
+        for (const auto &attr : parser->attribute_map()) {
+            (void)attr;
+        }
     }
     return c;
 }
